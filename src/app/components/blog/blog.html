@@ -1,1 +1,40 @@
-<p>blog works!</p>
+<section class="blog-container">
+
+  <aside class="blog-form">
+    <h2>Publicar Noticia</h2>
+    <form>
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" #titulo placeholder="Título de la noticia">
+
+      <label for="imagen">Imagen (URL)</label>
+      <input type="text" id="imagen" #imagen placeholder="https://ejemplo.com/imagen.jpg">
+
+      <label for="texto">Contenido</label>
+      <textarea id="texto" #texto rows="5" placeholder="Escribe el cuerpo de la noticia..."></textarea>
+
+      <label for="fecha">Fecha de publicación</label>
+      <input type="date" id="fecha" #fecha>
+
+      <button type="button" (click)="agregarNoticia(titulo, imagen, texto, fecha)">
+        Publicar
+      </button>
+    </form>
+  </aside>
+
+  <main class="blog-listado">
+    <h2>Últimas Noticias</h2>
+    <div class="noticias-grid">
+      @for (noticia of noticias; track noticia.titulo) {
+        <article class="noticia-card">
+          <img [src]="noticia.imagen" [alt]="noticia.titulo">
+          <div class="noticia-body">
+            <h3>{{ noticia.titulo }}</h3>
+            <p>{{ noticia.texto }}</p>
+            <small>{{ noticia.fecha }}</small>
+          </div>
+        </article>
+      }
+    </div>
+  </main>
+
+</section>
