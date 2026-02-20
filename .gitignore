@@ -206,3 +206,8 @@ dist
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/angular,node,macos
+
+
+*.docx
+*.pdf
+*.txt
