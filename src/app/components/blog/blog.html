@@ -24,7 +24,7 @@
   <main class="blog-listado">
     <h2>Últimas Noticias</h2>
     <div class="noticias-grid">
-      @for (noticia of noticias; track noticia.titulo) {
+      @for (noticia of noticias; track $index) {
         <article class="noticia-card">
           <img [src]="noticia.imagen" [alt]="noticia.titulo">
           <div class="noticia-body">
@@ -32,6 +32,7 @@
             <p>{{ noticia.texto }}</p>
             <small>{{ noticia.fecha }}</small>
           </div>
+          <button class="btn-eliminar" type="button" (click)="eliminarNoticia($index)" aria-label="Eliminar noticia">✕</button>
         </article>
       }
     </div>

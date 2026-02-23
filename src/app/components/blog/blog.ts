@@ -46,4 +46,8 @@ export class Blog {
     texto.value = '';
     fecha.value = '';
   }
+
+  eliminarNoticia(index: number) {
+    this.noticias.splice(index, 1);
+  }
 }

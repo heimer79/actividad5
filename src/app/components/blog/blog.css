@@ -99,6 +99,7 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: box-shadow 0.2s;
+  position: relative;
 }
 
 .noticia-card:hover {
@@ -137,6 +138,26 @@
 .noticia-body small {
   font-size: 0.8rem;
   color: #888;
+}
+
+.btn-eliminar {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.btn-eliminar:hover {
+  color: #e74c3c;
+  background: #ffeaea;
 }
 
 @media (max-width: 768px) {
